@@ -1,12 +1,13 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import pygame.image
-
+from pygame.font import Font
+from code.Const import WIN_WIDTH, COLOR_ORANGE, COLOR_WHITE, MENU_OPTION
 
 class Menu:
     def __init__(self, window):
         self.window = window
-        self.surf = pygame.image.load('./assets/menu.png')
+        self.surf = pygame.image.load('./assets/menu2.png')
         self.rect = self.surf.get_rect(left=0, top=0)
 
     def run(self, ):
@@ -14,8 +15,12 @@ class Menu:
         pygame.mixer_music.play(-1)
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, 'Space', COLOR_ORANGE, (WIN_WIDTH / 2, 70))
-            self.menu_text(50, 'Space', COLOR_ORANGE, (WIN_WIDTH / 2, 120))
+            self.menu_text(70, 'Space', COLOR_ORANGE, (WIN_WIDTH / 2, 80))
+            self.menu_text(70, 'Explorer', COLOR_WHITE, (WIN_WIDTH / 2, 130))
+
+            for i in range(len(MENU_OPTION)):
+                self.menu_text(20, MENU_OPTION[i], COLOR_WHITE, (WIN_WIDTH / 2, 200 + 25 * i))
+
             pygame.display.flip()
 
             # Check for all events

@@ -1,7 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from code.Const import WIN_WIDTH
+import random
+
+from code.Const import WIN_WIDTH, WIN_HEIGHT
 from code.background import Background
+from code.enemy import Enemy
+from code.player import Player
 
 
 class EntityFactory:
@@ -15,3 +19,7 @@ class EntityFactory:
                     list_bg.append(Background(f'Level1Bg{i}', (0, 0)))
 
                 return list_bg
+            case 'Player':
+                return Player('Player', (10,10))
+            case 'Enemy':
+                return Enemy('Enemy', (WIN_WIDTH + 10, random.randint(0,WIN_HEIGHT)))

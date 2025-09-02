@@ -21,13 +21,13 @@ class Level:
         pygame.time.set_timer(EVENT_ENEMY, 2000)
 
     def run(self):
-        pygame.mixer_music.load(f'./assets/level2.mp3')
+        pygame.mixer_music.load(f'./assets/level1.mp3')
         pygame.mixer_music.play(-1)
         clock = pygame.time.Clock()
         while True:
             clock.tick(60)
             for ent in self.entity_list:
-                self.window.blip(sorce=ent.surf, dest=ent.rect)
+                self.window.blit(source=ent.surf, dest=ent.rect)
                 ent.move()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:

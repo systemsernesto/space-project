@@ -15,8 +15,7 @@ ENTITY_SPEED = {
 EVENT_ENEMY = pygame.USEREVENT + 1
 
 # M
-MENU_OPTION = ('NEW GAME 1P',
-               'NEW GAME 2P',
+MENU_OPTION = ('NEW GAME',
                'SCORE',
                'EXIT')
 
